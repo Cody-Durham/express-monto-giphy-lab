@@ -33,15 +33,19 @@ function addPictures (giphData) {
     
     giphs.appendChild(imageNode)
   })
-  // console.log(giph.url);/////////////////////////////////////////////////////////////// nope
+  // console.log('anything dudeeeee); // this breaks the code and wount let me click when console.logging outside of the IF/
+  // console.log(giph.url);/////////////////////////////////////////////////////////////// cant console.log this 
 }
+// console.log(addPictures);// this logs the addPictures function
 
 axios.get('http://localhost:3000/giphs').then(response => {
   // gets the initial data
   addPictures(response.data)
-  console.log(response.data);
-  console.log('asd;lkfasdl;fajksdfl;aksdfja;lsdfjas')
+  // console.log(response.data);
+  // console.log('asd;lkfasdl;fajksdfl;aksdfja;lsdfjas')
 })
+// console.log(addPictures);
+// console.log(axios);// loggs a weid for loop ive never seen before
 
 editSubmit.addEventListener('click', (e) => {
   // submits the put request to edit a giph
@@ -52,29 +56,32 @@ editSubmit.addEventListener('click', (e) => {
     name,
     url
   }).then((resp) => {
-    console.log(resp)
+    // console.log(resp) // cant console.log this ...
     addPictures(resp.data)
     $('#modal-edit').modal('close')
   })
+  // console.log(resp.data) //.... cant console.log this.. 
 })
 
 submit.addEventListener('click', (e) => {
   // submits the post request to create a new picture
   const name = document.getElementById('name').value
   const url = document.getElementById('url').value
-  // console.log(name);
-  // console.log(url);
+  // console.log(name); // CAN console.log this!!!
+  // console.log(url); // CAN console.log this!!!
   
   axios.post('http://localhost:3000/giphs', {
     name,
     url
   }).then((resp) => {
     addPictures(resp.data)
-    console.log('testing', resp.data);
+    // console.log('testing', resp.data.data); // nope.. cant console.log this either
     $('#modal-create').modal('close')
   })
-  console.log(post);
+  console.log('ask;dljfas;ldfkjasdl;fkasdfasdfas');
+  // console.log(addPictures(resp.data));// nope.. this dosent log damnit. 
 })
+// console.log(post);// this breaks the code when logging here
 
 deleteButton.addEventListener('click', (e) => {
   // deletes an image
