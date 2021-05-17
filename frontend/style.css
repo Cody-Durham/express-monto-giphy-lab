@@ -9,13 +9,13 @@ button {
     margin-right: 15px !important;
 }
 
-.gifs {
+.giphs {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
 }
 
-.gif {
+.giph {
     background-color: lightgray;
     width: 100%;
     height: 300px;
